@@ -1,0 +1,80 @@
+/* Apply background image to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/login') no-repeat center center fixed;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: cover; /* Ensures the image covers the entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+}
+
+/* Container for the login form */
+.container {
+    width: 100%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency to make the background visible */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+label {
+    margin: 8px 0 10px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
