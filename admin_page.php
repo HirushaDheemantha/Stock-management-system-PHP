@@ -43,9 +43,6 @@ $username = $_SESSION['username'];
         
     </div>
     <section><a href="logout.php" class="btn-action">Logout</a></section>
-    <footer>
-        <p>&copy; 2024 Stock Management System. All rights reserved.</p>
-    </footer>
-
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

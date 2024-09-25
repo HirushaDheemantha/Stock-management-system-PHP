@@ -1,4 +1,4 @@
-/* General styles for all edit forms */
+
 .form-container {
     max-width: 600px;
     margin: 50px auto;
@@ -57,7 +57,7 @@ input[type="email"] {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    display: inline-block; /* Allows the button to behave like a link */
+    display: inline-block; 
     margin-top: 10px;
 }
 
@@ -65,7 +65,7 @@ input[type="email"] {
     background-color: #8c4d04;
 }
 
-/* Success and error message styles */
+
 .success-message {
     margin-bottom: 20px;
     color: green;
@@ -78,7 +78,7 @@ input[type="email"] {
     text-align: center;
 }
 
-/* Footer styles */
+
 footer {
     text-align: center;
     position: fixed;

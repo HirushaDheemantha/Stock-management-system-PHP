@@ -70,9 +70,7 @@ $purchases = getStockPurchases();
             </table>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Stock Management System. All rights reserved.</p>
-    </footer>
 </body>
 </html>
+
+<?php include 'includes/footer.php'; ?>

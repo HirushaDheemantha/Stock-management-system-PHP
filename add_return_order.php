@@ -59,9 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a href="manage_return_orders.php" class="btn-back">Back to Manage Return Orders</a>
         </form>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Stock Management System. All rights reserved.</p>
-    </footer>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

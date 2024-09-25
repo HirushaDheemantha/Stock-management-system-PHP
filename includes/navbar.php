@@ -1,5 +1,5 @@
 <div class="sidebar">
-    <h2>Inventory System</h2>
+    <h2>Stock Management System</h2>
     <ul>
         <li><a href="index.php">Dashboard</a></li>
         <li><a href="manage_items.php">Manage Items</a></li>

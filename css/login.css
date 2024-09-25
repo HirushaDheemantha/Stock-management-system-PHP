@@ -1,9 +1,9 @@
-/* Apply background image to the entire page */
+
 body {
     font-family: Arial, sans-serif;
     background: url('../images/login') no-repeat center center fixed;
     background-color: rgba(0, 0, 0, 0.1);
-    background-size: cover; /* Ensures the image covers the entire page */
+    background-size: cover; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,17 +11,17 @@ body {
     margin: 0px;
 }
 
-/* Container for the login form */
+
 .container {
     width: 100%;
     max-width: 300px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency to make the background visible */
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styling */
+
 form {
     display: flex;
     flex-direction: column;

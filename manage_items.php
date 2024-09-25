@@ -76,9 +76,7 @@ $items = getItems();
             </table>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Stock Management System. All rights reserved.</p>
-    </footer>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
+

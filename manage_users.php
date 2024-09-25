@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session
+session_start(); 
 include 'includes/functions.php';
 
 // Check if the user is logged in and has the admin role
@@ -10,12 +10,12 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
 
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
-    deleteUser($delete_id);  // Directly delete the user
+    deleteUser($delete_id);  
 }
 
 
-// Fetch all users
-$users = getUsers(); // Fetch users from the database
+
+$users = getUsers(); 
 
 ?>
 
@@ -29,17 +29,18 @@ $users = getUsers(); // Fetch users from the database
 </head>
 <body>
 
-    <!-- Main Content Area -->
+   
     <div class="main-content">
         <h1>Manage Users</h1>
         
-        <!-- Button to go to the Admin Dashboard -->
+        
         <a href="admin_page.php"><button class="btn-back">Go to Dashboard</button></a>
+
 
         <a href="add_user.php"><button class="btn-add">Add New User</button></a>
 
 
-        <!-- Table for Managing Users -->
+        
         <div class="table-container">
             <table>
                 <thead>
@@ -78,9 +79,7 @@ $users = getUsers(); // Fetch users from the database
             </table>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Stock Management System. All rights reserved.</p>
-    </footer>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
+

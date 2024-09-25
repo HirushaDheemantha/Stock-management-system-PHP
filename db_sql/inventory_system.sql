@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2024 at 07:02 AM
+-- Generation Time: Sep 20, 2024 at 09:37 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,8 +39,11 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`Item_id`, `Item_name`, `quantity`, `price`) VALUES
-(1, 'laptop', 229, 200),
-(3, 'item 6 ', 554, 200);
+(1, 'item 2', 393, 200),
+(3, 'item 3', 554, 200),
+(4, 'item 4', 300, 250),
+(5, 'item 5', 600, 300),
+(6, 'item 6', 200, 400);
 
 -- --------------------------------------------------------
 
@@ -61,7 +64,11 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`order_id`, `item_id`, `quantity`, `order_date`, `order_status`) VALUES
-(2, 1, 2, '0000-00-00 00:00:00', 'Pending');
+(2, 1, 4, '2024-09-10 18:30:00', 'Completed'),
+(3, 3, 7, '2024-09-13 18:30:00', 'Completed'),
+(4, 4, 12, '2024-09-15 18:30:00', 'Completed'),
+(5, 5, 20, '2024-09-14 18:30:00', 'In Progress'),
+(6, 6, 15, '2024-09-17 18:30:00', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -77,6 +84,13 @@ CREATE TABLE `return_tables` (
   `status` varchar(50) NOT NULL,
   `reason` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `return_tables`
+--
+
+INSERT INTO `return_tables` (`return_id`, `order_id`, `item_name`, `quantity_returned`, `status`, `reason`) VALUES
+(6, 2, 'item 3', 22, 'Restocked', 'Item Damaged');
 
 -- --------------------------------------------------------
 
@@ -98,7 +112,12 @@ CREATE TABLE `stock_purchases` (
 --
 
 INSERT INTO `stock_purchases` (`purchase_id`, `item_id`, `supplier_id`, `quantity`, `purchase_date`, `price`) VALUES
-(1, 3, 2, 323, '3333-12-31', 220.00);
+(1, 3, 2, 323, '2024-09-17', 220.00),
+(3, 1, 1, 25, '2024-09-03', 150.00),
+(4, 1, 1, 67, '2024-09-17', 200.00),
+(5, 5, 2, 15, '2024-09-05', 300.00),
+(6, 6, 1, 10, '2024-09-06', 400.00),
+(7, 1, 2, 99, '2024-09-18', 200.00);
 
 -- --------------------------------------------------------
 
@@ -117,9 +136,12 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`supplier_id`, `supplier_name`, `contact_info`) VALUES
-(1, 'Hirusha 12', 'hirusha12@gmail.com'),
-(2, 'Hirusha ', 'hirusha@gmail.com'),
-(3, 'Hirusha 3', 'hirusha123@gmail.com');
+(1, 'Supplier ABC', 'Supplierabc@gmail.com'),
+(2, 'SupplierXYZ', 'Supplierxyz@gmail.com'),
+(3, 'SupplierPQR', 'Supplierpqr@gmail.com'),
+(4, 'Supplier LMN', 'supplierlmn@gmail.com'),
+(5, 'Supplier DEF', 'supplierdef@gmail.com'),
+(6, 'Supplier GHI', 'supplierghi@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -142,10 +164,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `email`, `role`) VALUES
-(5, 'admin', '202cb962ac59075b964b07152d234b70', 'qq', 'qq', 'info@email.com', 'admin'),
-(6, 'uoc', '202cb962ac59075b964b07152d234b70', 'ss', 'ss', 'i@email.com', 'user'),
-(7, 'hiru', '202cb962ac59075b964b07152d234b70', 'wwqq', 'qeq', 'test@gmail.com', 'user'),
-(8, 'dhee', '$2y$10$bo8jS4yYdI/yAkqt4ra1KeuX4B8bCyyEBiGUeHZrctwap88SzUj6m', '23', 'www', '12@email.com', 'user');
+(5, 'admin', '202cb962ac59075b964b07152d234b70', 'admin', 'admin', 'contact.admin@gmail.com', 'admin'),
+(9, 'uoc', 'abf8412b7c606f8acd8b58968e9b4733', 'uoc', 'uoc', 'uoc@gmail.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -202,37 +222,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `Item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `return_tables`
 --
 ALTER TABLE `return_tables`
-  MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `stock_purchases`
 --
 ALTER TABLE `stock_purchases`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

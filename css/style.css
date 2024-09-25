@@ -139,6 +139,77 @@ h1 {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Button to go to the Admin Dashboard */
+.btn-back {
+    background-color: #f39c12; /* Orange color for the Back to Dashboard button */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background-color: #e67e22; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight hover lift */
+}
+
+/* Button to add a new user */
+.btn-add {
+    background-color: #28a745; /* Green color for Add New User button */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-left: 15px; /* Add some space between buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Hover lift */
+}
+
+/* Button to edit a user */
+.btn-edit {
+    background-color: #007bff; /* Blue color for Edit button */
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Hover lift */
+}
+
+/* Button to delete a user */
+.btn-delete {
+    background-color: #dc3545; /* Red color for Delete button */
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-2px); /* Hover lift */
+}
+
 .btn-account:hover {
     background-color: #2980b9;
     transform: translateY(-3px);
